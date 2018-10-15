@@ -1,15 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Layout from "./components/Layout";
 import AppContainer from "./containers/AppContainer";
-//import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import RowActions from "./data/actions/RowActions";
+import UserActions from "./data/actions/users/UserActions";
+
 const app = document.getElementById("app");
 
 
-import RowActions from "./data/Actions/RowActions";
+RowActions.addAction("My first task");
+RowActions.addAction("Another task");
+RowActions.addAction("Finish this tutorial");
 
-RowActions.addRow("My first task");
-RowActions.addRow("Another task");
-RowActions.addRow("Finish this tutorial");
-
-ReactDOM.render(<AppContainer />, app);
+ReactDOM.render(<AppContainer/>, app);

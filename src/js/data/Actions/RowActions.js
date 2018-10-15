@@ -1,15 +1,15 @@
 'use strict';
 
-import RowActionTypes from "./RowActionTypes";
-import RowDispatcher from "../Dispatchers/RowDispatcher";
+import RowDispatcher from "../dispatchers/RowDispatcher";
+import TodoActionTypes from "./RowActionTypes";
 
-const Actions = {
-  addRow(text) {
+const RowActions = {
+  addAction(text) {
     RowDispatcher.dispatch({
-      type: RowActionTypes.ADD_USER,
+      type: TodoActionTypes.ADD_TODO,
       text
     });
   }
 };
 
-export default Actions;
+export default RowActions;

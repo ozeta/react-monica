@@ -1,15 +1,13 @@
 import React from "react";
 //import TableList from "./TableList/TableList";
 
-import RowActions from "../../data/Actions/RowActions";
+import RowActions from "../../data/actions/RowActions";
 
 export default class ButtonGroup extends React.Component {
   constructor(props) {
     super(props);
-    console.log("BUTTON GROUP PROPS:");
-    console.log(props.addRow);
     this.onClick = this.onClick.bind(this);
-    this.addrow = props.addRow.bind(this);
+    this.addTodo = props.addAction.bind(this);
   }
   onClick() {
     console.log("CLICKED");
@@ -44,7 +42,7 @@ export default class ButtonGroup extends React.Component {
               href="#"
               class="btn btn-primary"
               onClick={() => {
-                this.addrow("nuovo");
+                this.addTodo("nuovo");
               }}
             >
               Dispatch action

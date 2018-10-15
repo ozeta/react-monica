@@ -1,6 +1,5 @@
-const ActionTypes = {
-  ADD_SESSION: "ADD_SESSION",
-  ADD_USER: "ADD_USER"
+const TodoActionTypes = {
+  ADD_TODO: "ADD_TODO",
 };
 
-export default ActionTypes;
+export default TodoActionTypes;
