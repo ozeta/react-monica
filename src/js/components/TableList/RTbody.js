@@ -2,7 +2,9 @@ import React from "react";
 import Trow from "./Trow";
 
 export default class RTbody extends React.Component {
-
+  constructor(props) {
+    super(props);
+  }
   render() {
     var i = 0;
     var list = [

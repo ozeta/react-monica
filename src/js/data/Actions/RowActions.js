@@ -1,3 +1,5 @@
+'use strict';
+
 import RowActionTypes from "./RowActionTypes";
 import RowDispatcher from "../Dispatchers/RowDispatcher";
 

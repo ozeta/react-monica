@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import {Container} from 'flux/utils';
-import TodoStore from '../data/Stores/RowStore';
+import RowStore from '../data/Stores/RowStore';
+import RowActions from '../data/Actions/RowActions';
 
 function getStores() {
   return [
@@ -11,6 +12,7 @@ function getStores() {
 function getState() {
   return {
     rows: RowStore.getState(),
+    addRow: RowActions.addRow
   };
 }
 

@@ -4,10 +4,10 @@ import Head from "./Head";
 import Header from "./Header";
 import TableList from "./TableList/TableList";
 import ButtonGroup from "./PagedButtons/ButtonGroup";
-
+/*
 export default class Layout extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       title: "Welcome"
     };
@@ -24,7 +24,7 @@ export default class Layout extends React.Component {
           ciao!
           <Link to="/head">HHHHDEAD</Link>
           <TableList />
-          <ButtonGroup />
+          <ButtonGroup {...this.props} />
           <Header
             changeTitle={this.changeTitle.bind(this)}
             title={this.state.title}
@@ -35,23 +35,8 @@ export default class Layout extends React.Component {
     );
   }
 }
-
-/*
-function build(props){
-  console.log("building!");
-  return (<h1>ok</h1>);
-}
-export function Layout(props) {
-  if (props.todos.size === 0) {
-    console.log("non cè niente qu!");
-    return null;
-  }
-
-  return (
-    <div>
-      Ciao!
-     // {build(props)}
-    </div>
-  );
-}
 */
+
+export default function Layout(props){
+  return (<ButtonGroup {...props} />);
+} 
