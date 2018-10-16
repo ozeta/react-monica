@@ -1,9 +1,9 @@
 import Layout from '../components/Layout';
 import {Container} from 'flux/utils';
-import RowStore from '../data/stores/RowStore';
 import RowActions from '../data/actions/RowActions';
-import UserStore from "../data/stores/UserStore";
 import UserActions from "../data/actions/users/UserActions";
+import RowStore from '../data/stores/RowStore';
+import UserStore from "../data/stores/UserStore";
 
 function getStores() {
   return [
@@ -16,6 +16,7 @@ function getState() {
   return {
     rows: RowStore.getState(),
     users: UserStore.getState(),
+
     addAction: RowActions.addAction,
     addUser: UserActions.addUserAction,
   };

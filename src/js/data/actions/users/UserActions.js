@@ -1,12 +1,12 @@
 'use strict';
 
-import UserActionType from "./UserActionType";
 import RowDispatcher from "../../dispatchers/RowDispatcher";
+import UserActionTypes from "./UserActionType";
 
 const UserActions = {
   addUserAction(name, lastSession, actions) {
     RowDispatcher.dispatch({
-      type: UserActionType.ADD_USER,
+      type: UserActionTypes.ADD_USER,
       name, lastSession, actions
     });
   }

@@ -16,11 +16,11 @@ class RowStore extends ReduceStore {
   reduce(state, action) {
     switch (action.type) {
       case RowActionTypes.ADD_TODO:
-      console.log("Store -> reducing ADD TODO" + action.text);
+        const id = Counter.increment();
+        // console.log("Store -> reducing ADD TODO " + action.text + " with id: " + id);
       if (!action.text) {
         return state;
       }
-      const id = Counter.increment();
       return state.set(id, new Row({
         t0:id,
         t1: action.text,

@@ -5,17 +5,27 @@ export default class RTbody extends React.Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     var i = 0;
-    var list = [
-      <Trow key="0" arg={["mar", "10/10", "Show sessions"]}/>,
-      <Trow key="1"  arg={["esp", "10/11", "Show sessions"]} />,
-      <Trow key="2" arg={["sav", "10/12", "Show sessions"]} />,
-    ];
+    if (this.props.rows.size === 0) {
+      console.log("nothing to do here");
+      return (<tbody></tbody>);
+    }
 
+    window.rows = this.props.rows;
+
+    for (let row of this.props.rows.values()) {
+      console.log(row.toString());
+    }
     return (
       <tbody>
-        {list}
+      {[...this.props.rows.values()].map(row => (
+        <Trow
+          key={row.t0}
+          arg={[row.t1, new Date().getTime(), false]}
+        />
+      ))}
       </tbody>
     );
   }

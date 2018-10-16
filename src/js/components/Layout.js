@@ -64,13 +64,13 @@ export default function Layout(props) {
   return (<ButtonGroup {...props} />);
 } */
 
-export default function Layout(props) {
+function Layout(props) {
   return  (
     <Router>
       <div>
         ciao!
         <Link to="/head">HHHHDEAD</Link>
-        <TableList />
+        <TableList {...props} />
         <ButtonGroup {...props} />
         <Header
    /*       changeTitle={changeTitle.bind(this)}
@@ -81,3 +81,5 @@ export default function Layout(props) {
     </Router>
   );
 }
+
+export default Layout;

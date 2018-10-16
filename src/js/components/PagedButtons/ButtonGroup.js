@@ -8,6 +8,7 @@ export default class ButtonGroup extends React.Component {
     super(props);
     this.onClick = this.onClick.bind(this);
     this.addTodo = props.addAction.bind(this);
+    this.addUser = props.addUser.bind(this);
   }
   onClick() {
     console.log("CLICKED");
@@ -42,7 +43,9 @@ export default class ButtonGroup extends React.Component {
               href="#"
               class="btn btn-primary"
               onClick={() => {
-                this.addTodo("nuovo");
+                // this.addTodo("nuovo");
+                console.log("adding user");
+                this.addUser("a", "b", "c");
               }}
             >
               Dispatch action

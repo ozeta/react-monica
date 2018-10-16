@@ -1,9 +1,10 @@
 import Immutable from 'immutable';
 import {ReduceStore} from 'flux/utils';
-import UserActionTypes from '../actions/users/UserActions';
+import UserActionTypes from '../actions/users/UserActionType';
 import RowDispatcher from '../dispatchers/RowDispatcher';
 import Counter from '../Counter';
 import Row from '../Row';
+
 class UserStore extends ReduceStore {
   constructor() {
     super(RowDispatcher);
@@ -16,16 +17,16 @@ class UserStore extends ReduceStore {
   reduce(state, action) {
     switch (action.type) {
       case UserActionTypes.ADD_USER:
-        console.log("Store -> reducing ADD USER" + action.text);
+        const id = Counter.increment();
+         console.log("Store -> User -> reducing ADD USER <" + action + "> with id: " + id);
         if (!action.text) {
           return state;
         }
-        const id = Counter.increment();
-/*        return state.set(id, new Row({
-          t0:id,
-          t1: action.text,
-          t2: false,
-        }));*/
+        return state.set(id, new Row({
+          t0: action.text,
+          t1: action.lastSession,
+          t2: action.action,
+        }));
 
       default:
         return state;

@@ -6,11 +6,12 @@ export default class RTable extends React.Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     return (
       <table>
-        <RThead />
-        <RTbody />
+        <RThead {...this.props} />
+        <RTbody {...this.props} />
       </table>
     );
   }

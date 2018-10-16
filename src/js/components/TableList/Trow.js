@@ -5,7 +5,7 @@ constructor(){
   super();
 }
   render() {
-    console.log("ROW.props -> " + this.props.arg);
+    // console.log("ROW.props -> " + this.props.arg);
     return (
         <tr>
           <td>{this.props.arg[0]}</td>
