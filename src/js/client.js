@@ -1,18 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import AppContainer from "./containers/AppContainer";
-import RowActions from "./data/actions/RowActions";
 import UserActions from "./data/actions/users/UserActions";
 import Rest from "./api/Rest.js";
 
 const app = document.getElementById("app");
 
 
-RowActions.addAction("My first task");
-RowActions.addAction("Another task");
-RowActions.addAction("Finish this tutorial");
-UserActions.addUserAction("espoelena", new Date().getMilliseconds(), "bho");
-UserActions.addUserAction("marcarrozzo", new Date().getMilliseconds(), "bho");
+// RowActions.addAction("My first task");
+// RowActions.addAction("Another task");
+// RowActions.addAction("Finish this tutorial");
+UserActions.addUserAction("espoelena", new Date().getMilliseconds(), "bho1");
+UserActions.addUserAction("marcarrozzo", new Date().getMilliseconds(), "bho2");
 //chiamata async a monica rest
 /*let response = Rest.getSortedUsers();
 response.then(data => {

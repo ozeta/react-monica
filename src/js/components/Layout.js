@@ -3,80 +3,39 @@ import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import Head from "./Head";
 import Header from "./Header";
 import TableList from "./TableList/TableList";
-import ButtonGroup from "./PagedButtons/ButtonGroup";
-import RowStore from "../data/stores/RowStore";
-import UserStore from "../data/stores/UserStore";
-import RowActions from "../data/actions/RowActions";
-import UserActions from "../data/actions/users/UserActions";
-/*
-
-export default class Layout extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: "Welcome"
-    };
-
-  }
-  static getStores() {
-    return [
-      RowStore,
-      UserStore,
-    ];
-  }
-
-  static getState() {
-    return {
-      rows: RowStore.getState(),
-      users: UserStore.getState(),
-      addAction: RowActions.addAction,
-      addUser: UserActions.addUserAction,
-    };
-  }
-  changeTitle(title) {
-    this.setState({ title });
-  }
- static calculateState(){
-
- }
-  render() {
-    return (
-      <Router>
-        <div>
-          ciao!
-          <Link to="/head">HHHHDEAD</Link>
-          <TableList />
-          <ButtonGroup {...this.props} />
-          <Header
-            changeTitle={this.changeTitle.bind(this)}
-            title={this.state.title}
-          />
-          <Route path="/head" component={Head} />
-        </div>
-      </Router>
-    );
-  }
-}
-*/
-/*
-
-export default function Layout(props) {
-  return (<ButtonGroup {...props} />);
-} */
+import ButtonGroup_Next from "./PagedButtons/ButtonGroup_Next";
+import Nav from "./Nav/Nav";
+import Footer from "./Footer/Footer";
+import UserList from "./UserList/UserList";
+import SessionList from "./SessionList/SessionList";
 
 function Layout(props) {
-  return  (
+  return (
     <Router>
       <div>
-        ciao!
-        <Link to="/head">HHHHDEAD</Link>
-        <TableList {...props} />
-        <ButtonGroup {...props} />
-        <Header
-   /*       changeTitle={changeTitle.bind(this)}
-          title={this.state.title}*/
-        />
-        <Route path="/head" component={Head} />
+        <Nav/>
+        <Header/>
+        <div className="py-5">
+
+          <div className="container-fluid m-5">
+            <div className="row">
+              <UserList {...props} title="Users" outerDivClass="col-sm-12 col-md-12 col-lg-6 bg-light mx-auto"/>
+              <SessionList {...props} title="Sessions"/>
+
+              {/*
+              <div className="col-sm-12 col-md-12 col-lg-6">
+                <h1 className="">Sessions</h1>
+                <TableList {...props} id="SessionList"/>
+                <ButtonGroup_Next {...props} />
+                <Route path="/other" component={Head}/>
+
+              </div>*/}
+            </div>
+          </div>
+        </div>
+        <div className="py-3">
+          <Footer/>
+        </div>
       </div>
     </Router>
   );

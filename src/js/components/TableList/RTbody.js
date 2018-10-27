@@ -8,22 +8,22 @@ export default class RTbody extends React.Component {
 
   render() {
     var i = 0;
-    if (this.props.rows.size === 0) {
+    if (this.props.users.size === 0) {
+      console.log(this.props);
       console.log("nothing to do here");
       return (<tbody></tbody>);
     }
-
-    window.rows = this.props.rows;
-
-    for (let row of this.props.rows.values()) {
-      console.log(row.toString());
+    for (let user of this.props.users.values()) {
+      console.log("STORE->user:");
+      console.log(user.toString());
     }
+    let date = new Date().getTime().toString();
     return (
       <tbody>
-      {[...this.props.rows.values()].map(row => (
+      {[...this.props.users.values()].map(row => (
         <Trow
           key={row.t0}
-          arg={[row.t1, new Date().getTime(), false]}
+          arg={[row.t0, row.t1, row.t2]}
         />
       ))}
       </tbody>
