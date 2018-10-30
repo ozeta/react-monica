@@ -27,7 +27,7 @@ class UserStore extends ReduceStore {
         return state.set(id, new Row({
           t0: action.name,
           t1: action.lastSession,
-          t2: action.action,
+          t2: action.actions,
         }));
       case UserActionTypes.REMOVE_ONE:
         return state;

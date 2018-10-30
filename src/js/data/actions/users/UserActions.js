@@ -9,6 +9,11 @@ const UserActions = {
       type: UserActionTypes.ADD_USER,
       name, lastSession, actions
     });
+  },
+  getSmall() {
+    RowDispatcher.dispatch({
+      type: UserActionTypes.GET_SMALL,
+    });
   }
 };
 
